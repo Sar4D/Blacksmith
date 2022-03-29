@@ -440,8 +440,8 @@
         // Additional Variables
         "allServers": "[concat(variables('domainController'), variables('adfsServer'))]",
         "domainNameArray": "[split(parameters('domainFQDN'),'.')]",
-        "workstationsOUPath": "[concat('OU=Workstations; DC=', variables('domainNameArray')[0], '; DC=', variables('domainNameArray')[1])]",
-        "serversOUPath": "[concat('OU=Servers; DC=', variables('domainNameArray')[0], '; DC=', variables('domainNameArray')[1])]",
+        "workstationsOUPath": "[concat('OU=Workstations; DC=; DC=;', variables('domainNameArray')[0], '; DC=', variables('domainNameArray')[1])]",
+        "serversOUPath": "[concat('OU=Servers; DC=; DC=;', variables('domainNameArray')[0], '; DC=', variables('domainNameArray')[1])]",
         
         //Certificates
         "smbSharedFolder": "Setup",
