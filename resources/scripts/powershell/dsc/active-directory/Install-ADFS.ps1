@@ -74,7 +74,6 @@ configuration Install-ADFS
                 # ***** Enabling ADFS Verbose Auditing *****
                 <#
                 Get-AdfsProperties | Select Auditlevel
-
                 AuditLevel
                 ----------
                 {Basic}
