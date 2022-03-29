@@ -131,9 +131,9 @@ configuration Create-AD {
                     $arrService.Refresh()
                 }
 
-                $DomainName1,$DomainName2 = ($using:domainFQDN).split('.')
+                $DomainName1,$DomainName2,$DomainName3 = ($using:domainFQDN).split('.')
 
-                $ParentPath = "DC=$DomainName1,DC=$DomainName2"
+                $ParentPath = "DC=$DomainName1,DC=$DomainName2,DC=$DomainName3"
                 $OUS = @(("Workstations","Workstations in the domain"),("Servers","Servers in the domain"),("LogCollectors","Servers collecting event logs"),("DomainUsers","Users in the domain"))
 
                 foreach($OU in $OUS)
@@ -177,7 +177,7 @@ configuration Create-AD {
                 }
 
                 $DomainName = $using:domainFQDN
-                $DomainName1,$DomainName2 = $DomainName.split('.')
+                $DomainName1,$DomainName2,$DomainName3 = $DomainName.split('.')
                 $ADServer = $using:ComputerName+"."+$DomainName
 
                 $NewDomainUsers = $using:DomainUsers
@@ -186,7 +186,7 @@ configuration Create-AD {
                 {
                     $UserPrincipalName = $DomainUser.SamAccountName + "@" + $DomainName
                     $DisplayName = $DomainUser.LastName + " " + $DomainUser.FirstName
-                    $OUPath = "OU="+$DomainUser.UserContainer+",DC=$DomainName1,DC=$DomainName2"
+                    $OUPath = "OU="+$DomainUser.UserContainer+",DC=$DomainName1,DC=$DomainName2,DC=$DomainName3"
                     $SamAccountName = $DomainUser.SamAccountName
                     $ServiceName = $DomainUser.FirstName
 
