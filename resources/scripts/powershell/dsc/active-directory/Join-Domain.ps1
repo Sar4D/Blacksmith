@@ -55,7 +55,6 @@ configuration Join-Domain {
             Name          = $ComputerName 
             DomainName    = $DomainFQDN
             Credential    = $DomainCreds
-            JoinOU        = $JoinOU
             DependsOn  = "[WaitForADDomain]WaitForDCReady"
         }
 
