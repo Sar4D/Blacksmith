@@ -6,7 +6,7 @@
             "type": "string",
             "metadata": {
                 "description": "Username for the Virtual Machine."
-            }F
+            }
         },
         "adminPassword": {
             "type": "securestring",
